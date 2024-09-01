@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --blueMainColor: #38b0f6;
+    --redMainColor: #FF4C4C
+}
+
+
+.blue {
+    --mainColor: #38b0f6;
+    --bg-hover-button: #60A5FA;
+    --bg-active-button: #2563EB;
+    --bg-input: #EFF6FF
+}
+
+.red {
+    --mainColor: #FF4C4C;
+    --bg-hover-button: #F87171;
+    --bg-active-button: #DC2626;
+    --bg-input: #FEF2F2
+}
+
+
+.dark_mode {
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.dark_mode_label {
+    width: 65px;
+    height: 30px;
+    position: relative;
+    display: block;
+    background: #ebebeb;
+    border-radius: 200px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+        inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dark_mode_label:after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.dark_mode_input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.dark_mode_input:checked+.dark_mode_label {
+    background: #242424;
+}
+
+.dark_mode_input:checked+.dark_mode_label:after {
+    left: 62px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+.dark_mode_label:active:after {
+    width: 30px;
+}
+
+.dark_mode_label svg {
+    position: absolute;
+    width: 20px;
+    top: 5px;
+    z-index: 100;
+}
+
+.dark_mode_label svg.sun {
+    left: 5px;
+    fill: #fff;
+    transition: 0.3s;
+}
+
+.dark_mode_label svg.moon {
+    left: 40px;
+    fill: #7e7e7e;
+    transition: 0.3s;
+}
+
+.dark_mode_input:checked+.dark_mode_label svg.sun {
+    fill: #7e7e7e;
+}
+
+.dark_mode_input:checked+.dark_mode_label svg.moon {
+    fill: #fff;
+}
+
+
+/* Add To Cart Animation */
+
+.add_to_cart {
+    animation: shopifyshake 4s;
+    animation-iteration-count: infinite;
+}
+
+.text {
+    display: block;
+    font-size: 2em;
+    width: 100%;
+    -webkit-animation-duration: 1s;
+    animation-duration: 0.5s;
+}
+
+.fadeInDown.text {
+    -webkit-animation-duration: 1.6s;
+    animation-duration: 0.8s;
+}
+
+
+@keyframes shopifyshake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    1% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    2% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    3% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    4% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    5% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    6% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    7% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    8% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    80% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    90% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
